@@ -1,0 +1,90 @@
+<div class="product">
+    <div class="create">
+        <button class="btn create" (click)="open(content)">Add Product</button>
+
+        <ng-template #content let-modal>
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Add product</h4>
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="productForm" >
+                    <div class="m-2 text-sm">
+                        <label>Name</label>
+                        <input  id="name" type="text" placeholder="product name" 
+                          class="form-control rounded-md border border-gray-400 "  formControlName="name" />
+                      </div>
+                      <div class="m-2 text-sm" [formGroup]="productForm">
+                        <label>Description</label>
+                        <input  id="name" type="text" placeholder="product description"
+                          class="form-control rounded-md border border-gray-400 " formControlName="description" />
+                      </div>
+                      <div class="m-2 text-sm" [formGroup]="productForm">
+                        <label>Starting Price</label>
+                        <input  id="name" type="text" placeholder="price"
+                          class="form-control rounded-md border border-gray-400 " formControlName="price" />
+                      </div>
+                      <div class="m-2 text-sm" [formGroup]="productForm">
+                        <label>Bidding End Time</label>
+                        <input  id="name" type="time" placeholder="BidTime"
+                          class="form-control rounded-md border border-gray-400 " formControlName="time" />
+                      </div>
+
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" (click)="modal.close('Save click')" (click)="onSubmit()"  >Save</button>
+            </div>
+        </ng-template>
+        
+        
+        <hr />
+        
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name </th>
+                <th scope="col">Description</th>
+                <th scope="col">Starting Price</th>
+                <th scope="col">Bidding EndTime</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Vehicle</td>
+                <td>Make:Toyota </td>
+                <td>Ksh 800,000</td>
+                <td>11:00 Am</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Vehicle</td>
+                <td>Make:Mercedes</td>
+                <td>Ksh 1000,000</td>
+                <td>11:00 Am</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+</div>
